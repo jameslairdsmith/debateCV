@@ -1,0 +1,6 @@
+name: "debateCV"
+navbar:
+  title: "Debate CV"
+  left:
+    - text: "Home"
+      href: index.html
