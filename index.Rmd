@@ -1,0 +1,63 @@
+---
+title: "Debate CV"
+author: "James Laird-Smith"
+output: 
+    html_document:
+        toc: TRUE
+        toc_float: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(googlesheets4)
+library(glue)
+```
+
+
+```{r include=FALSE}
+# cv_entries_judging_from_sheet <- 
+#   read_sheet("1aWslvXXbs70PLCkEnvtjAdAGxoOFiYFEK2y5IiJg9Zk",  
+#              sheet = "Judging")
+# 
+# cv_entries_judging_from_sheet %>% 
+#   write_csv("judging_entries.csv")
+```
+
+
+## Judging
+
+```{r include=FALSE}
+cv_entries_judging <- read_csv("judging_entries.csv")
+```
+
+```{r include=FALSE}
+cv_entries_judging
+```
+
+
+```{r echo=FALSE, results='asis'}
+cv_entries_judging %>% 
+  filter(Broke == T) %>% 
+  rename(start_date = `Date (first day)`) %>% 
+  glue_data("### {Competition}, {Year}",
+            "\n",
+            "{strftime(start_date, '%e %B %Y')}",
+            "\n\n",
+            "{Reached}",
+            "\n\n")
+```
+
+
+## Speaking
+
+```{r}
+# cv_entries_speaking <- 
+#   read_sheet("1aWslvXXbs70PLCkEnvtjAdAGxoOFiYFEK2y5IiJg9Zk",  
+#              sheet = "Speaking")
+# 
+# cv_entries_speaking
+```
+
+
+
