@@ -1,6 +1,10 @@
 name: "debateCV"
+output_dir: "."
 navbar:
   title: "Debate CV"
   left:
     - text: "Home"
       href: index.html
+    - text: "Table"
+      href: table.html
+output: html_document
