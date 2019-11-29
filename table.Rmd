@@ -1,0 +1,69 @@
+---
+title: "Debate CV"
+author: "James Laird-Smith"
+output: 
+    html_document:
+        toc: FALSE
+        toc_float: FALSE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(googlesheets4)
+library(reactable)
+library(janitor)
+```
+
+
+```{r include=FALSE}
+# cv_entries_judging_from_sheet <- 
+#   read_sheet("1aWslvXXbs70PLCkEnvtjAdAGxoOFiYFEK2y5IiJg9Zk",  
+#              sheet = "Judging")
+# 
+# cv_entries_judging_from_sheet %>% 
+#   write_csv("judging_entries.csv")
+```
+
+
+## Judging
+
+```{r include=FALSE}
+cv_entries_judging_raw <- read_csv("judging_entries.csv")
+```
+
+
+```{r include=FALSE}
+cv_entries_judging <- 
+  cv_entries_judging_raw %>% 
+  clean_names() %>% 
+  mutate(date_first_day = as.Date(date_first_day),
+         reached = str_remove(reached, "Broke to ")) %>%
+  mutate(reached = if_else(reached == "Didn't break",
+                           NA_character_,
+                           reached)) %>% 
+  select(competition,
+         year,
+         type,
+         broke,
+         reached,
+         date_first_day)
+```
+
+```{r}
+cv_entries_judging
+```
+
+
+```{r echo=FALSE}
+colum_specs <- list(
+  year = colDef(name = "Year", align = "left"),
+  competition = colDef(name = "Competition name")
+)
+
+reactable(cv_entries_judging,
+          pagination = FALSE,
+          columns = colum_specs)
+```
+
+## Glossary
