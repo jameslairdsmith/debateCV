@@ -5,6 +5,8 @@ navbar:
   left:
     - text: "Home"
       href: index.html
+    - text: "Sections"
+      href: doc.html
     - text: "Table"
       href: table.html
 output: html_document

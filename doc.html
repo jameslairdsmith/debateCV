@@ -21,6 +21,9 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -250,6 +253,63 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -257,6 +317,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -300,10 +370,142 @@ $(document).ready(function () {
 </div>
 
 
+<div id="judging" class="section level2">
+<h2>Judging</h2>
+<div id="wudc-2019" class="section level3">
+<h3>WUDC, 2019</h3>
+<p>27 December 2018</p>
+<p>Broke to Semi-Finals</p>
+</div>
+<div id="sanudc-2011" class="section level3">
+<h3>SANUDC, 2011</h3>
+<p>9 July 2011</p>
+<p>Broke to Semi-Finals</p>
+</div>
+<div id="lse-open-2018" class="section level3">
+<h3>LSE Open, 2018</h3>
+<p>10 February 2018</p>
+<p>Broke to Quarter Finals</p>
+</div>
+<div id="oxford-iv-2018" class="section level3">
+<h3>Oxford IV, 2018</h3>
+<p>9 November 2018</p>
+<p>Broke to Quarter Finals</p>
+</div>
+<div id="inner-temple-open-2019" class="section level3">
+<h3>Inner Temple Open, 2019</h3>
+<p>18 January 2019</p>
+<p>Chaired Semi-Final</p>
+</div>
+<div id="imperial-open-2019" class="section level3">
+<h3>Imperial Open, 2019</h3>
+<p>12 October 2019</p>
+<p>Broke to Final</p>
+</div>
+<div id="cape-town-open-2017" class="section level3">
+<h3>Cape Town Open, 2017</h3>
+<p>29 April 2017</p>
+<p>Broke to FInals</p>
+</div>
+<div id="uct-150th-year-open-2015" class="section level3">
+<h3>UCT 150th Year Open, 2015</h3>
+<p>24 July 2015</p>
+<p>Chaired Semi-Final</p>
+</div>
+<div id="kcl-schools-2018" class="section level3">
+<h3>KCL Schools, 2018</h3>
+<p>3 February 2018</p>
+<p>Broke to FInals</p>
+</div>
+<div id="ucl-schools-2018" class="section level3">
+<h3>UCL Schools, 2018</h3>
+<p>24 February 2018</p>
+<p>Broke to Finals</p>
+</div>
+<div id="ucl-iv-2018" class="section level3">
+<h3>UCL IV, 2018</h3>
+<p>10 March 2018</p>
+<p>Broke to Finals</p>
+</div>
+<div id="ucl-iv-2018-1" class="section level3">
+<h3>UCL IV, 2018</h3>
+<p>10 March 2018</p>
+<p>Broke to Finals</p>
+</div>
+<div id="imperial-schools-2018" class="section level3">
+<h3>Imperial Schools, 2018</h3>
+<p>17 March 2018</p>
+<p>Broke to Finals</p>
+</div>
+<div id="the-science-open-2018" class="section level3">
+<h3>The Science Open, 2018</h3>
+<p>18 March 2018</p>
+<p>Broke to Finals</p>
+</div>
+<div id="kcl-pro-am-2018" class="section level3">
+<h3>KCL Pro-Am, 2018</h3>
+<p>24 March 2018</p>
+<p>Broke to Finals</p>
+</div>
+<div id="sci-fi-open-2018" class="section level3">
+<h3>Sci-Fi Open, 2018</h3>
+<p>25 March 2018</p>
+<p>Broke to Finals</p>
+</div>
+<div id="lse-asians-2018" class="section level3">
+<h3>LSE Asians, 2018</h3>
+<p>9 June 2018</p>
+<p>Broke to Finals</p>
+</div>
+<div id="kcl-open-2018" class="section level3">
+<h3>KCL Open, 2018</h3>
+<p>30 June 2018</p>
+<p>Broke to Finals</p>
+</div>
+<div id="ucl-presidents-cup-2018" class="section level3">
+<h3>UCL President’s Cup, 2018</h3>
+<p>6 October 2018</p>
+<p>Broke to Semi-Finals</p>
+</div>
+<div id="imperial-novices-2018" class="section level3">
+<h3>Imperial Novices, 2018</h3>
+<p>14 October 2018</p>
+<p>Broke to Finals</p>
+</div>
+<div id="kcl-pro-am-2018-1" class="section level3">
+<h3>KCL Pro-Am, 2018</h3>
+<p>20 October 2018</p>
+<p>Broke to Finals</p>
+</div>
+<div id="kcl-iv-2018" class="section level3">
+<h3>KCL IV, 2018</h3>
+<p>27 October 2018</p>
+<p>Broke to Semi-Finals</p>
+</div>
+<div id="lse-pro-am-2019" class="section level3">
+<h3>LSE Pro-Am, 2019</h3>
+<p>13 January 2019</p>
+<p>Broke to Finals</p>
+</div>
+<div id="soas-and-friends-mini-open-2019" class="section level3">
+<h3>SOAS and Friends Mini-Open, 2019</h3>
+<p>24 February 2019</p>
+<p>Chaired Novice Final</p>
+</div>
+</div>
+<div id="speaking" class="section level2">
+<h2>Speaking</h2>
+<pre class="r"><code># cv_entries_speaking &lt;- 
+#   read_sheet(&quot;1aWslvXXbs70PLCkEnvtjAdAGxoOFiYFEK2y5IiJg9Zk&quot;,  
+#              sheet = &quot;Speaking&quot;)
+# 
+# cv_entries_speaking</code></pre>
+</div>
 
 
 
-
+</div>
+</div>
 
 </div>
 
@@ -336,6 +538,32 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
