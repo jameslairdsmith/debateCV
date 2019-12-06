@@ -13,15 +13,16 @@ library(tidyverse)
 library(googlesheets4)
 library(reactable)
 library(janitor)
+library(emo)
 ```
 
 
 ```{r include=FALSE}
-# cv_entries_judging_from_sheet <- 
-#   read_sheet("1aWslvXXbs70PLCkEnvtjAdAGxoOFiYFEK2y5IiJg9Zk",  
+# cv_entries_judging_from_sheet <-
+#   read_sheet("1aWslvXXbs70PLCkEnvtjAdAGxoOFiYFEK2y5IiJg9Zk",
 #              sheet = "Judging")
 # 
-# cv_entries_judging_from_sheet %>% 
+# cv_entries_judging_from_sheet %>%
 #   write_csv("judging_entries.csv")
 ```
 
@@ -42,23 +43,32 @@ cv_entries_judging <-
   mutate(reached = if_else(reached == "Didn't break",
                            NA_character_,
                            reached)) %>% 
+  mutate(broke = if_else(broke,
+                         as.character(emo::ji("check")),
+                         as.character(emo::ji("multiplication")))) %>% 
+  mutate(competition_type = if_else(competition_type == "IV",
+                                    "Intervarsity",
+                                    competition_type)) %>% 
   select(competition,
          year,
-         type,
+         competition_type,
          broke,
          reached,
-         date_first_day)
-```
-
-```{r}
-cv_entries_judging
+         date_first_day) %>% 
+  mutate(rn = row_number()) %>% 
+  select(rn, everything())
 ```
 
 
 ```{r echo=FALSE}
 colum_specs <- list(
-  year = colDef(name = "Year", align = "left"),
-  competition = colDef(name = "Competition name")
+  year = colDef(name = "Year", align = "left", maxWidth = 60),
+  competition = colDef(name = "Competition name"),
+  competition_type = colDef(name = "Competition type"),
+  broke = colDef(name = "Broke", maxWidth = 60),
+  reached = colDef(name = "Furthest stage reached", na = "-"),
+  rn = colDef(name = "#", maxWidth = 40, align = "left"),
+  date_first_day = colDef(name = "Start date")
 )
 
 reactable(cv_entries_judging,
