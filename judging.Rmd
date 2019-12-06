@@ -1,6 +1,6 @@
 ---
-title: "Debate CV"
-author: "James Laird-Smith"
+title: "Judging"
+author: " "
 output: 
     html_document:
         toc: FALSE
@@ -26,8 +26,6 @@ library(emo)
 #   write_csv("judging_entries.csv")
 ```
 
-
-## Judging
 
 ```{r include=FALSE}
 cv_entries_judging_raw <- read_csv("judging_entries.csv")
@@ -75,5 +73,3 @@ reactable(cv_entries_judging,
           pagination = FALSE,
           columns = colum_specs)
 ```
-
-## Glossary

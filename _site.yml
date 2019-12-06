@@ -1,12 +1,10 @@
 name: "debateCV"
 output_dir: "."
 navbar:
-  title: "Debate CV"
+  title: "Debate CV: James Laird-Smith"
   left:
     - text: "Home"
       href: index.html
-    - text: "Sections"
-      href: doc.html
-    - text: "Table"
-      href: table.html
+    - text: "Judging"
+      href: judging.html
 output: html_document
